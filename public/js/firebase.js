@@ -20,8 +20,13 @@
     var km = document.getElementById("km").value;
     var kmFinal = document.getElementById("kmFinal").value;
     var finalidade = document.getElementById("finalidade").value;
-    var dtSaida = document.getElementById("dtSaida").value;
-    var hrSaida = document.getElementById("hrSaida").value;
+    //    var dtSaida = document.getElementById("dtSaida").value;
+    var dtSaida = `${d.getFullYear()}(ano)-${d.getMonth()+1}(mes)-${d.getDate()}(dia)`;
+    console.log(dtSaida); //retirar dps
+    var hrSaida = `${d.getHours()}hrs-${d.getMinutes()}min-${d.getSeconds()}seg-`;
+    console.log(hrSaida); // retirar dps
+
+    
     e.preventDefault();
     salvarViagem(veiculo, placa, km, kmFinal, finalidade, dtSaida, hrSaida);
     form.reset();
@@ -42,5 +47,5 @@
         }
       let db = firebase.database().ref("viagens/"+counter);
       db.set(viagem);
-      alert('Cliente cadastrado com sucesso!');
+      alert('Viagem cadastrada com sucesso!');
   }
