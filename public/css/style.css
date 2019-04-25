@@ -5,3 +5,32 @@ p{
 body{
     background: #e9ecef;
 }
+
+.formAuthentication{
+    margin-top: 25vh;
+    margin-bottom: 20vh;
+}
+
+.form-group{
+    margin-bottom: 3vh;
+    width: 100%;
+}
+
+.buttonFinalizar{
+    width: 35%;
+    margin: 7.5%;
+}
+
+.group-button{
+    display: flex;
+}
+
+.bg-dark{
+    box-sizing: border-box;
+    height: 10vh;
+}
+
+.blackg{
+    padding-top: 1vh;
+    font-weight: bold;
+}

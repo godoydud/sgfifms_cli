@@ -15,6 +15,7 @@
 
   document.getElementById("form").addEventListener("submit",(e)=>{
     // var motorista = document.getElementById("motorista").value;
+    var motorista = sessionStorage.user
     var veiculo = document.getElementById("veiculo").value;
     var placa = document.getElementById("placa").value;
     var km = document.getElementById("km").value;
@@ -25,15 +26,16 @@
     var hrSaida = `${d.getHours()}hrs-${d.getMinutes()}min-${d.getSeconds()}seg-`;
     console.log(hrSaida); // retirar dps
     e.preventDefault();
-    salvarViagem(veiculo, placa, km, kmFinal, finalidade, dtSaida, hrSaida);
+    salvarViagem(motorista, veiculo, placa, km, kmFinal, finalidade, dtSaida, hrSaida);
     form.reset();
   });
 
-  function salvarViagem(veiculo, placa, km, kmFinal, finalidade, dtSaida, hrSaida){
+  function salvarViagem(motorista, veiculo, placa, km, kmFinal, finalidade, dtSaida, hrSaida){
       console.log(counter); // Retirar da fase de testes
       counter+=1;
       var viagem={
           id:counter,
+          motorista:motorista,
           veiculo:veiculo,
           placa:placa,
           km:km,

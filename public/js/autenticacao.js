@@ -29,6 +29,7 @@ loginUserButton.addEventListener('click', function () {
     .then(function (result) {
         console.log(result);
         alert('Autenticado como ' + userInput.value);
+        sessionStorage.user = userInput.value;
         window.location.href = "registro.html";
     })
     .catch(function (error) {
