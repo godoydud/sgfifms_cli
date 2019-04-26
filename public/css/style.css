@@ -3,7 +3,7 @@ p{
 }
 
 body{
-    background: #e9ecef;
+    background: #d3d6da;
 }
 
 .formAuthentication{
@@ -31,6 +31,8 @@ body{
 }
 
 .blackg{
-    padding-top: 1vh;
+    text-align: center;
+    width: 100%;
+    padding-top: 1.5vh;
     font-weight: bold;
 }

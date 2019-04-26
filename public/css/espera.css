@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Gugi');
+.container-relogio {
+    margin-top: 25vh;
+    margin-bottom: 15vh;
+}
+
+.body{
+    background: #e9ecef;
+}
+
+.tempo {
+    width: 100%;
+    text-align: center;
+    font-size: 15vh;
+    display: block;
+    font-family: 'Gugi', cursive;
+    margin-bottom: 0;
+    margin-top: -4vh;
+}
+
+.date{
+    width: 100%;
+    text-align: center;
+    font-size: 2.5vh;
+    display: block;
+    font-family: 'Gugi', cursive;
+    margin-bottom: 2vh;
+    margin-top: -2.5vh;
+}
+
+span{
+    color: #212529;
+    line-height: 1.2;
+}

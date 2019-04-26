@@ -29,7 +29,7 @@ loginUserButton.addEventListener('click', function () {
     .then(function (result) {
         console.log(result);
         alert('Autenticado como ' + userInput.value);
-        sessionStorage.user = userInput.value;
+        localStorage.user = userInput.value;
         window.location.href = "registro.html";
     })
     .catch(function (error) {

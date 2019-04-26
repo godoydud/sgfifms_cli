@@ -20,20 +20,54 @@
         <form id="form">
 
             <div class="form-group">
-                <label for="">Kilômetragem Final</label>
-                <input type="number" class="form-control" id="kmFinal" placeholder="Kilômetragem Final do Veículo">
+                <label for="">Motorista</label>
+                <input readonly="true" type="text" class="form-control">
             </div>
-          
+            <div class="form-group">
+                <label for="">Placa</label>
+                <input readonly="true" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Veículo</label>
+                <input readonly="true" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Finalidade</label>
+                <input readonly="true" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Data de Saída</label>
+                <input readonly="true" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Hora de Saída</label>
+                <input readonly="true" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Quilometragem Inicial</label>
+                <input readonly="true" type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="">Quilometragem Final</label>
+                <input type="number" class="form-control" id="kmFinal" placeholder="Quilometragem Final do Veículo">
+            </div>
+
 
             <div class="text-right form-group group-button">
-                <button class="btn btn-danger buttonFinalizar">Cancelar</button></a>   
-                <button type="submit" class="btn btn-success buttonFinalizar">Finalizar</button>
+                <button class="btn btn-danger buttonFinalizar">Cancelar</button>
+                <button class="btn btn-success buttonFinalizar">Finalizar</button>
             </div>
         </form>
 
 </body>
-<script src="public/js/index.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
-<script src="public/js/firebase.js"></script>
+<script src="public/js/finalizar.js"></script>
+<script>
+    document.getElementsByTagName('button')[0].addEventListener('click', () => {
+        alert('Rodou a funcao de navegacoa')
+        window.location.replace("https://google.com");
+    })
+</script>
 
 </html>
