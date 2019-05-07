@@ -31,7 +31,7 @@ const preencheDados = () => {
 window.onload = preencheDados()
 
 
-let dados = JSON.parse(localStorage.dados)
+var dados = JSON.parse(localStorage.dados)
 
 document.getElementsByTagName('input')[0].value = dados.motorista
 document.getElementsByTagName('input')[1].value = dados.placa
@@ -57,4 +57,5 @@ const atualizaDados = async () => {
 document.getElementsByTagName('button')[1].addEventListener('click', async () => {
     await atualizaDados()
     alert('Viagem Finalizada')
+    
 })
