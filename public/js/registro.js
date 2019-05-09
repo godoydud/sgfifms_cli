@@ -14,6 +14,7 @@ document.getElementById("form").addEventListener("submit", (e) => {
   e.preventDefault();
   salvarViagem(motorista, veiculo, placa, km, kmFinal, finalidade, dtSaida, hrSaida);
   form.reset();
+  
 });
 
 async function salvarViagem(motorista, veiculo, placa, km, kmFinal, finalidade, dtSaida, hrSaida) {
