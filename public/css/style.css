@@ -2,12 +2,16 @@ p{
     color: white;
 }
 
-body{
-    background: #d3d6da;
+.background{
+    background: #FFB30F;
+}
+
+.backgroundCinza{
+    background: #e9ecef;
 }
 
 .formAuthentication{
-    margin-top: 25vh;
+    margin-top: 30vh;
     margin-bottom: 20vh;
 }
 
@@ -35,4 +39,13 @@ body{
     width: 100%;
     padding-top: 1.5vh;
     font-weight: bold;
+}
+
+.logo{
+    margin: 0;
+    position: absolute;
+    top: -25%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
 }
