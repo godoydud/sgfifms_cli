@@ -23,18 +23,20 @@
             </div>
             <div class="form-group">
                 <label for="">Veículo</label>
-                <select id="veiculo" class="form-control">
+                <select id="veiculo" class="form-control" onchange="buscaplaca()">
                     <option>Insira Veículo...</option>
-          
-        </select>
+                </select>
             </div>
             <div class="form-group">
                 <label for="">Placa</label>
-                <input type="text" class="form-control" id="placa" placeholder="Placa do Veículo">
+                <!-- <input type="text" class="form-control" id="placa" placeholder="Placa do Veículo"> -->
+                <select class="form-control" id="placa" onchange="buscaKm()">
+                    <option>Insira Placa...</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="">Quilometragem</label>
-                <input type="number" class="form-control" id="km" placeholder="Quilometragem Atual do Veículo">
+                <input readonly="true" type="number" class="form-control" id="km" placeholder="Quilometragem Atual do Veículo">
             </div>
             <div class="form-group">
                 <!-- input de Km Final escondido(hidden) pois só será mostrado na tela de finalização da viagem -->
