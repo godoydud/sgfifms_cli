@@ -7,19 +7,19 @@ var emailInput = document.getElementById('emailInput');
 var passwordInput = document.getElementById('passwordInput');
 
 // Autenticar com email e senha
-loginUserButton.addEventListener('click', function () {
+loginUserButton.addEventListener('click', function() {
     firebase
-    .auth()
-    .signInWithEmailAndPassword(emailInput.value, passwordInput.value)
-    .then(function (result) {
-        console.log(result);
-        alert('Autenticado como ' + emailInput.value);
-        localStorage.user = emailInput.value;
-        window.location.href = "registro.html";
-    })
-    .catch(function (error) {
-        console.error(error.code);
-        console.error(error.message);
-        alert("Falha ao autenticar")
-    })
+        .auth()
+        .signInWithEmailAndPassword(emailInput.value, passwordInput.value)
+        .then(function(result) {
+            console.log(result);
+            alert('Autenticado como ' + emailInput.value);
+            sessionStorage.user = emailInput.value;
+            window.location.href = "registro.html";
+        })
+        .catch(function(error) {
+            console.error(error.code);
+            console.error(error.message);
+            alert("Falha ao autenticar")
+        })
 })

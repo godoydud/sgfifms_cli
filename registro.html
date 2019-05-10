@@ -2,58 +2,58 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Frota - IFMS</title>
-  <link rel="stylesheet" href="public/css/bootstrap.min.css">
-  <link rel="stylesheet" href="public/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Frota - IFMS</title>
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/style.css">
 </head>
 
 <body class="backgroundCinza">
-  <nav class="navbar navbar-dark bg-dark">
-    <!-- Conteúdo do navbar -->
-    <p class="blackg">Registro de Viagem</p>
-  </nav>
-  <div class="jumbotron">
+    <nav class="navbar navbar-dark bg-dark">
+        <!-- Conteúdo do navbar -->
+        <p class="blackg">Registro de Viagem</p>
+    </nav>
+    <div class="jumbotron">
 
-    <form id="form">
-      <div class="form-group">
-        <label for="">Motorista: <span id="retorno"></span></label>
-      </div>
-      <div class="form-group">
-        <label for="">Veículo</label>
-        <select id="veiculo" class="form-control">
+        <form id="form">
+            <div class="form-group">
+                <label for="">Motorista: <span id="retorno"></span></label>
+            </div>
+            <div class="form-group">
+                <label for="">Veículo</label>
+                <select id="veiculo" class="form-control">
           <option></option>
           <option>Veículo 1</option>
           <option>Veículo 2</option>
           <option>Veículo 3</option>
         </select>
-      </div>
-      <div class="form-group">
-        <label for="">Placa</label>
-        <input type="text" class="form-control" id="placa" placeholder="Placa do Veículo">
-      </div>
-      <div class="form-group">
-        <label for="">Kilômetragem</label>
-        <input type="number" class="form-control" id="km" placeholder="Kilômetragem Atual do Veículo">
-      </div>
-      <div class="form-group">
-        <!-- input de Km Final escondido(hidden) pois só será mostrado na tela de finalização da viagem -->
-        <input readonly="true" type="hidden" class="form-control" id="kmFinal" placeholder="Kilômetragem Final">
-      </div>
-      <div class="form-group">
-        <label for="">Finalidade</label>
-        <textarea class="form-control" id="finalidade" rows="3" cols="45"></textarea>
-      </div>
+            </div>
+            <div class="form-group">
+                <label for="">Placa</label>
+                <input type="text" class="form-control" id="placa" placeholder="Placa do Veículo">
+            </div>
+            <div class="form-group">
+                <label for="">Kilômetragem</label>
+                <input type="number" class="form-control" id="km" placeholder="Kilômetragem Atual do Veículo">
+            </div>
+            <div class="form-group">
+                <!-- input de Km Final escondido(hidden) pois só será mostrado na tela de finalização da viagem -->
+                <input readonly="true" type="hidden" class="form-control" id="kmFinal" placeholder="Kilômetragem Final">
+            </div>
+            <div class="form-group">
+                <label for="">Finalidade</label>
+                <textarea class="form-control" id="finalidade" rows="3" cols="45"></textarea>
+            </div>
 
 
 
-      <div class="text-center">
-        <button type="submit" class="btn btn-success">Salvar</button>
-      </div>
-  </div>
-  </form>
+            <div class="text-center">
+                <button type="submit" class="btn btn-success">Salvar</button>
+            </div>
+    </div>
+    </form>
 
 
 
@@ -64,7 +64,7 @@
 <script src="public/js/registro.js"></script>
 
 <script>
-  document.getElementById('retorno').innerHTML = localStorage.user  //Mostra em qual email o usuário está logado ( sessionStorage.user recebe = userInput.value)
+    document.getElementById('retorno').innerHTML = sessionStorage.user //Mostra em qual email o usuário está logado ( sessionStorage.user recebe = userInput.value)
 </script>
 
 </html>
