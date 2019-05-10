@@ -24,10 +24,8 @@
             <div class="form-group">
                 <label for="">Veículo</label>
                 <select id="veiculo" class="form-control">
-          <option></option>
-          <option>Veículo 1</option>
-          <option>Veículo 2</option>
-          <option>Veículo 3</option>
+                    <option>Insira Veículo...</option>
+          
         </select>
             </div>
             <div class="form-group">
@@ -35,8 +33,8 @@
                 <input type="text" class="form-control" id="placa" placeholder="Placa do Veículo">
             </div>
             <div class="form-group">
-                <label for="">Kilômetragem</label>
-                <input type="number" class="form-control" id="km" placeholder="Kilômetragem Atual do Veículo">
+                <label for="">Quilometragem</label>
+                <input type="number" class="form-control" id="km" placeholder="Quilometragem Atual do Veículo">
             </div>
             <div class="form-group">
                 <!-- input de Km Final escondido(hidden) pois só será mostrado na tela de finalização da viagem -->
@@ -62,6 +60,7 @@
 <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
 <script src="public/js/firebase.js"></script>
 <script src="public/js/registro.js"></script>
+<script src="public/js/selectVeiculo.js"></script>
 
 <script>
     document.getElementById('retorno').innerHTML = sessionStorage.user //Mostra em qual email o usuário está logado ( sessionStorage.user recebe = userInput.value)
