@@ -19,7 +19,7 @@ document.getElementById("form").addEventListener("submit", (e) => {
 });
 
 const buscaTamanho = async() => {
-    await firebase.database().ref('viagens/').on('value', function(snapshot) {
+    await firebase.database().ref('viagens/').once('value', function(snapshot) {
         id = snapshot.val().length
         console.log(snapshot.val());
 
@@ -36,7 +36,7 @@ async function salvarViagem(motorista, veiculo, placa, km, kmFinal, finalidade, 
     console.log(id);
 
     await firebase.database().ref("viagens/" + id).set({
-        id: 1,
+        id: id,
         motorista: motorista,
         veiculo: veiculo,
         placa: placa,
@@ -49,6 +49,8 @@ async function salvarViagem(motorista, veiculo, placa, km, kmFinal, finalidade, 
     });
 
     alert('Viagem cadastrada com sucesso!');
-    sessionStorage.id = 1;
+    sessionStorage.id = id;
+    console.log(sessionStorage.id);
+
     window.location.href = "espera.html"
 }
