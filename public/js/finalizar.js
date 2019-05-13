@@ -40,8 +40,19 @@ const atualizaDados = async() => {
     })
 }
 
-document.getElementsByTagName('button')[1].addEventListener('click', async() => {
+document.getElementById('buttonFinalizar').addEventListener('click', async() => {
+    event.preventDefault()
+    console.log(`Entrou na funcao de finalizar`);
+
+    await firebase.database().ref(`veiculos/${sessionStorage.idVeiculo}`).update({        
+        kmVeiculo:document.getElementById('kmFinal').value
+    })
+    
     await atualizaDados()
+
+    document.getElementsByTagName('input')[7].readOnly="true"
+    window.location.replace("registro.html");
+
     alert('Viagem Finalizada')
 
 })
