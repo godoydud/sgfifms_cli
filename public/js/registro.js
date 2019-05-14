@@ -13,9 +13,25 @@ document.getElementById("form").addEventListener("submit", (e) => {
     var dtSaida = `${d.getFullYear()}(ano)-${d.getMonth() + 1}(mes)-${d.getDate()}(dia)`;
     var hrSaida = `${d.getHours()}hrs-${d.getMinutes()}min-${d.getSeconds()}seg-`;
     e.preventDefault();
-    salvarViagem(motorista, veiculo, placa, km, kmFinal, finalidade, dtSaida, hrSaida);
-    form.reset();
 
+    if(veiculo == "Insira Veículo..."){
+        window.location.reload("registro.html")
+        alert("Selecione o veículo desejado.")
+    }
+
+    if(placa == "Insira Placa..."){
+        window.location.reload("registro.html")
+        alert("Selecione a placa do veículo.")
+    }
+    if(finalidade == ""){
+        window.location.reload("registro.html")
+        alert("Insira Finalidade para prosseguir")
+    
+    }else{
+        salvarViagem(motorista, veiculo, placa, km, kmFinal, finalidade, dtSaida, hrSaida);
+    form.reset();
+    }
+    
 });
 
 const buscaTamanho = async() => {
