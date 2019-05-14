@@ -1,11 +1,11 @@
 {
   "dir": "ltr",
   "lang" : "en",
-  "name" : "",
+  "name" : "Yellow Bus",
   "scope" : "/",
   "display" : "standalone",
   "start_url" : "https://yellowbusifms.herokuapp.com/",
-  "short_name" : "Yellow Bus",
+  "short_name" : " ",
   "theme_color" : "transparent",
   "description" : "Controle do uso de frotas do IFMS Campus Nova Andradina",
   "orientation" : "any",
