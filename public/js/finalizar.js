@@ -27,6 +27,10 @@ const preencheDados = () => {
 
 window.onload = preencheDados()
 
+if(kmFinal.value < kmFinal.value){
+    alert("Quilometragem final não pode ser menor que quilometragem inicial")
+    window.location.reload("finalizar.html")
+
 const atualizaDados = async() => {
     await firebase.database().ref(`viagens/${sessionStorage.id}`).set({
         motorista: document.getElementsByTagName('input')[0].value,
@@ -56,3 +60,4 @@ document.getElementById('buttonFinalizar').addEventListener('click', async() => 
     alert('Viagem Finalizada')
 
 })
+}

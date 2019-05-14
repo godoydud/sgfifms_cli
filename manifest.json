@@ -10,7 +10,6 @@
   "description" : "Controle do uso de frotas do IFMS Campus Nova Andradina",
   "orientation" : "any",
   "background_color" : "#FFB30F",
-  "generated" : "undefined",
   "icons": [
     {
       "src": "public/images/icons/icon-72x72.png",
