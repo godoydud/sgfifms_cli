@@ -25,11 +25,10 @@ const preencheDados = () => {
     })
 }
 
+
 window.onload = preencheDados()
 
-if(kmFinal.value < kmFinal.value){
-    alert("Quilometragem final não pode ser menor que quilometragem inicial")
-    window.location.reload("finalizar.html")
+
 
 const atualizaDados = async() => {
     await firebase.database().ref(`viagens/${sessionStorage.id}`).set({
@@ -44,14 +43,13 @@ const atualizaDados = async() => {
     })
 }
 
-document.getElementById('buttonFinalizar').addEventListener('click', async() => {
+    document.getElementById('buttonFinalizar').addEventListener('click', async() => {
     event.preventDefault()
     console.log(`Entrou na funcao de finalizar`);
 
     await firebase.database().ref(`veiculos/${sessionStorage.idVeiculo}`).update({        
         kmVeiculo:document.getElementById('kmFinal').value
     })
-    
     await atualizaDados()
 
     document.getElementsByTagName('input')[7].readOnly="true"
@@ -60,4 +58,8 @@ document.getElementById('buttonFinalizar').addEventListener('click', async() => 
     alert('Viagem Finalizada')
 
 })
-}
+
+    
+
+
+
