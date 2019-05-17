@@ -8,6 +8,7 @@ var config = {
     messagingSenderId: "808645356921"
 };
 firebase.initializeApp(config);
+const kmFinal = 0
 
 const preencheDados = () => {
     console.log(sessionStorage.id);
@@ -21,6 +22,9 @@ const preencheDados = () => {
         document.getElementsByTagName('input')[4].value = snapshot.val().dtSaida
         document.getElementsByTagName('input')[5].value = snapshot.val().hrSaida
         document.getElementsByTagName('input')[6].value = snapshot.val().km
+        sessionStorage.kmAtual = snapshot.val().km
+        console.log(sessionStorage.kmAtual);
+        
 
     })
 }
@@ -31,31 +35,36 @@ window.onload = preencheDados()
 
 
 const atualizaDados = async() => {
-    await firebase.database().ref(`viagens/${sessionStorage.id}`).set({
-        motorista: document.getElementsByTagName('input')[0].value,
-        placa: document.getElementsByTagName('input')[1].value,
-        veiculo: document.getElementsByTagName('input')[2].value,
-        finalidade: document.getElementsByTagName('input')[3].value,
-        dtSaida: document.getElementsByTagName('input')[4].value,
-        hrSaida: document.getElementsByTagName('input')[5].value,
-        km: document.getElementsByTagName('input')[6].value,
-        kmFinal: document.getElementById('kmFinal').value
-    })
+    if (sessionStorage.kmAtual > document.getElementById('kmFinal').value) {
+        alert(`A quilometragem final e menor que a velocidade inicial`)        
+        document.getElementById(`kmFinal`).style.borderColor = `red`
+    
+    }else{
+        await firebase.database().ref(`viagens/${sessionStorage.id}`).set({
+            motorista: document.getElementsByTagName('input')[0].value,
+            placa: document.getElementsByTagName('input')[1].value,
+            veiculo: document.getElementsByTagName('input')[2].value,
+            finalidade: document.getElementsByTagName('input')[3].value,
+            dtSaida: document.getElementsByTagName('input')[4].value,
+            hrSaida: document.getElementsByTagName('input')[5].value,
+            km: document.getElementsByTagName('input')[6].value,
+            kmFinal: document.getElementById('kmFinal').value
+        })
+       
+
+        await firebase.database().ref(`veiculos/${sessionStorage.idVeiculo}`).update({        
+            kmVeiculo:document.getElementById('kmFinal').value
+        })
+
+        window.location.replace("registro.html");
+    alert('Viagem Finalizada')
+    }
 }
 
     document.getElementById('buttonFinalizar').addEventListener('click', async() => {
     event.preventDefault()
-    console.log(`Entrou na funcao de finalizar`);
-
-    await firebase.database().ref(`veiculos/${sessionStorage.idVeiculo}`).update({        
-        kmVeiculo:document.getElementById('kmFinal').value
-    })
     await atualizaDados()
-
-    document.getElementsByTagName('input')[7].readOnly="true"
-    window.location.replace("registro.html");
-
-    alert('Viagem Finalizada')
+    
 
 })
 
