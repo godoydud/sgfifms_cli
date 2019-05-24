@@ -36,7 +36,7 @@ window.onload = preencheDados()
 
 const atualizaDados = async() => {
     if (sessionStorage.kmAtual > document.getElementById('kmFinal').value) {
-        alert(`A quilometragem final e menor que a velocidade inicial`)        
+        alert(`A quilometragem final não pode ser menor que a velocidade inicial`)        
         document.getElementById(`kmFinal`).style.borderColor = `red`
     
     }else{
