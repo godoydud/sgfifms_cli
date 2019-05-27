@@ -11,8 +11,7 @@ firebase.initializeApp(config);
 const kmFinal = 0
 
 const preencheDados = () => {
-    console.log(sessionStorage.id);
-
+    
     let db = firebase.database().ref(`viagens/${sessionStorage.id}`)
     db.on('value', (snapshot) => {
         document.getElementsByTagName('input')[0].value = snapshot.val().motorista
@@ -23,7 +22,8 @@ const preencheDados = () => {
         document.getElementsByTagName('input')[5].value = snapshot.val().hrSaida
         document.getElementsByTagName('input')[6].value = snapshot.val().km
         sessionStorage.kmAtual = snapshot.val().km
-        console.log(sessionStorage.kmAtual);
+        console.log(sessionStorage.idVeiculo);
+       
         
 
     })
@@ -35,6 +35,8 @@ window.onload = preencheDados()
 
 
 const atualizaDados = async() => {
+    console.log(sessionStorage.idVeiculo);
+    
     if (sessionStorage.kmAtual > document.getElementById('kmFinal').value) {
         alert(`A quilometragem final não pode ser menor que a velocidade inicial`)        
         document.getElementById(`kmFinal`).style.borderColor = `red`
