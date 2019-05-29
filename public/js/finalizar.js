@@ -50,7 +50,7 @@ const atualizaDados = async() => {
             dtSaida: document.getElementsByTagName('input')[4].value,
             hrSaida: document.getElementsByTagName('input')[5].value,
             km: document.getElementsByTagName('input')[6].value,
-            kmFinal: document.getElementById('kmFinal').value
+            kmFinal: document.getElementById('kmFinal').value,
         })
        
 
