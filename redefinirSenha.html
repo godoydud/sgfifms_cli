@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Esqueci Minha Senha</title>
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body class="backgroundVerde">
+        <div class="col-md-4">
+
+                <img class="logo" src="public/images/logo.png" alt="logo">
+    
+            <form id="form" class="formAuthentication">
+                <div class="form-group">
+                    <label class="labelWhite" for="userInput"><strong>Email</strong></label>
+                    <input type="email" class="form-control" id="userInput" placeholder="Email">
+                    <div class="labelInformativo text-center">
+                        <label class="redefinirSenha" for="">Será enviado um link de redefinição de senha para sua caixa de emails</label>
+                    </div>
+                </div>
+            </form>
+    
+            <button onclick="resetPass()" class="btn btn-lg btn-block btn-primary" id="redefinirSenha">Redefinir Senha</button>
+
+            <br>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+        <script src="public/js/firebase.js"></script>
+        <script src="public/js/redefinirSenha.js"></script>
+</body>
+</html>

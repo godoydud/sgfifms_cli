@@ -11,7 +11,9 @@ firebase.initializeApp(config);
 const kmFinal = 0
 
 const preencheDados = () => {
-    
+    var d = new Date();
+    var t = d.getTime();
+
     let db = firebase.database().ref(`viagens/${sessionStorage.id}`)
     db.on('value', (snapshot) => {
         document.getElementsByTagName('input')[0].value = snapshot.val().motorista
@@ -20,7 +22,9 @@ const preencheDados = () => {
         document.getElementsByTagName('input')[3].value = snapshot.val().finalidade
         document.getElementsByTagName('input')[4].value = snapshot.val().dtSaida
         document.getElementsByTagName('input')[5].value = snapshot.val().hrSaida
-        document.getElementsByTagName('input')[6].value = snapshot.val().km
+        document.getElementsByTagName('input')[6].value =  `${d.getFullYear()}(ano)-${d.getMonth() + 1}(mês)-${d.getDate()}(dia)`;
+        document.getElementsByTagName('input')[7].value = `${d.getHours()}hrs-${d.getMinutes()}min-${d.getSeconds()}seg`;
+        document.getElementsByTagName('input')[8].value = snapshot.val().km
         sessionStorage.kmAtual = snapshot.val().km
         console.log(sessionStorage.idVeiculo);
        
@@ -38,7 +42,7 @@ const atualizaDados = async() => {
     console.log(sessionStorage.idVeiculo);
     
     if (sessionStorage.kmAtual > document.getElementById('kmFinal').value) {
-        alert(`A quilometragem final não pode ser menor que a velocidade inicial`)        
+        alert(`A quilometragem final não pode ser menor que a quilometragem inicial`)        
         document.getElementById(`kmFinal`).style.borderColor = `red`
     
     }else{
@@ -49,7 +53,9 @@ const atualizaDados = async() => {
             finalidade: document.getElementsByTagName('input')[3].value,
             dtSaida: document.getElementsByTagName('input')[4].value,
             hrSaida: document.getElementsByTagName('input')[5].value,
-            km: document.getElementsByTagName('input')[6].value,
+            dtChegada: document.getElementsByTagName('input')[6].value,
+            hrChegada: document.getElementsByTagName('input')[7].value,
+            km: document.getElementsByTagName('input')[8].value,
             kmFinal: document.getElementById('kmFinal').value,
         })
        
@@ -57,6 +63,10 @@ const atualizaDados = async() => {
         await firebase.database().ref(`veiculos/${sessionStorage.idVeiculo}`).update({        
             kmVeiculo:document.getElementById('kmFinal').value
         })
+
+        // await firebase.database().ref().update({        
+        //     numViagens = +1
+        // })
 
         window.location.replace("registro.html");
     alert('Viagem Finalizada')
