@@ -22,8 +22,8 @@ const preencheDados = () => {
         document.getElementsByTagName('input')[3].value = snapshot.val().finalidade
         document.getElementsByTagName('input')[4].value = snapshot.val().dtSaida
         document.getElementsByTagName('input')[5].value = snapshot.val().hrSaida
-        document.getElementsByTagName('input')[6].value =  `${d.getFullYear()}(ano)-${d.getMonth() + 1}(mês)-${d.getDate()}(dia)`;
-        document.getElementsByTagName('input')[7].value = `${d.getHours()}hrs-${d.getMinutes()}min-${d.getSeconds()}seg`;
+        document.getElementsByTagName('input')[6].value = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`
+        document.getElementsByTagName('input')[7].value = `${d.getHours()}:${d.getMinutes()}`;
         document.getElementsByTagName('input')[8].value = snapshot.val().km
         sessionStorage.kmAtual = snapshot.val().km
         console.log(sessionStorage.idVeiculo);

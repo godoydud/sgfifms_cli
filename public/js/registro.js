@@ -10,8 +10,8 @@ document.getElementById("form").addEventListener("submit", (e) => {
     var km = document.getElementById("km").value;
     var kmFinal = document.getElementById("kmFinal").value;
     var finalidade = document.getElementById("finalidade").value;
-    var dtSaida = `${d.getFullYear()}(ano)-${d.getMonth() + 1}(mês)-${d.getDate()}(dia)`;
-    var hrSaida = `${d.getHours()}hrs-${d.getMinutes()}min-${d.getSeconds()}seg`;
+    var dtSaida = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`   
+    var hrSaida = `${d.getHours()}:${d.getMinutes()}`;
     e.preventDefault();
 
     if(veiculo == "Insira Veículo..."){
