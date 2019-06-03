@@ -70,3 +70,14 @@ async function salvarViagem(motorista, veiculo, placa, km, kmFinal, finalidade, 
 
     window.location.href = "espera.html"
 }
+
+async function guardarContador(id) {
+
+    console.log(id);
+
+    await firebase.database().ref(contViagens).set({
+        id: contViagens,
+
+
+    });
+}
