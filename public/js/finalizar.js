@@ -22,8 +22,16 @@ const preencheDados = () => {
         document.getElementsByTagName('input')[3].value = snapshot.val().finalidade
         document.getElementsByTagName('input')[4].value = snapshot.val().dtSaida
         document.getElementsByTagName('input')[5].value = snapshot.val().hrSaida
-        document.getElementsByTagName('input')[6].value = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`
-        document.getElementsByTagName('input')[7].value = `${d.getHours()}:${d.getMinutes()}`;
+        if(d.getDate() < 10){
+            document.getElementsByTagName('input')[6].value = `0${d.getDate()}/0${d.getMonth() + 1}/${d.getFullYear()}`
+        }else{
+            document.getElementsByTagName('input')[6].value = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`
+        }
+        if(d.getHours() < 10 || d.getMinutes() <10){
+            document.getElementsByTagName('input')[7].value = `${d.getHours()}:0${d.getMinutes()}`;
+        }else{
+            document.getElementsByTagName('input')[7].value = `${d.getHours()}:${d.getMinutes()}`;
+        }
         document.getElementsByTagName('input')[8].value = snapshot.val().km
         sessionStorage.kmAtual = snapshot.val().km
         console.log(sessionStorage.idVeiculo);

@@ -10,8 +10,17 @@ document.getElementById("form").addEventListener("submit", (e) => {
     var km = document.getElementById("km").value;
     var kmFinal = document.getElementById("kmFinal").value;
     var finalidade = document.getElementById("finalidade").value;
-    var dtSaida = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`   
-    var hrSaida = `${d.getHours()}:${d.getMinutes()}`;
+    if(d.getDate() < 10 || d.getMonth() <10){
+        var dtSaida = `0${d.getDate()}/0${d.getMonth() + 1}/${d.getFullYear()}`   
+    }else{
+        var dtSaida = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`   
+    }
+    if(d.getHours() < 10 || d.getMinutes() <10){
+        var hrSaida = `${d.getHours()}:0${d.getMinutes()}`;
+    }else{
+        var hrSaida = `${d.getHours()}:${d.getMinutes()}`;
+    }
+    
     e.preventDefault();
 
     if(veiculo == "Insira Veículo..."){
