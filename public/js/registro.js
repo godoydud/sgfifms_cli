@@ -73,11 +73,11 @@ async function salvarViagem(motorista, veiculo, placa, km, kmFinal, finalidade, 
 
     });
 
-    alert('Viagem cadastrada com sucesso!');
-    sessionStorage.id = id;
-    console.log(sessionStorage.id);
+    await firebase.database().ref("contViagens").set(id);
 
-    window.location.href = "espera.html"
+  
+    sessionStorage.id = id;
+   
 }
 
 async function guardarContador(id) {
