@@ -44,8 +44,6 @@ const buscaTamanho = async() => {
         console.log(snapshot.val());
 
         console.log(`Id: ${id}`);
-
-
     })
 }
 

@@ -63,7 +63,6 @@ const atualizaDados = async() => {
             kmFinal: document.getElementById('kmFinal').value,
         })
        
-
         await firebase.database().ref(`veiculos/${sessionStorage.idVeiculo}`).update({        
             kmVeiculo:document.getElementById('kmFinal').value
         })
