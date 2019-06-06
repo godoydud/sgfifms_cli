@@ -27,7 +27,7 @@ const preencheDados = () => {
         }else{
             document.getElementsByTagName('input')[6].value = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`
         }
-        if(d.getHours() < 10 || d.getMinutes() <10){
+        if(d.getMinutes() <10){
             document.getElementsByTagName('input')[7].value = `${d.getHours()}:0${d.getMinutes()}`;
         }else{
             document.getElementsByTagName('input')[7].value = `${d.getHours()}:${d.getMinutes()}`;

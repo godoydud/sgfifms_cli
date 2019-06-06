@@ -15,7 +15,7 @@ document.getElementById("form").addEventListener("submit", (e) => {
     }else{
         var dtSaida = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`   
     }
-    if(d.getHours() < 10 || d.getMinutes() <10){
+    if(d.getMinutes() < 10 ){
         var hrSaida = `${d.getHours()}:0${d.getMinutes()}`;
     }else{
         var hrSaida = `${d.getHours()}:${d.getMinutes()}`;
@@ -74,10 +74,9 @@ async function salvarViagem(motorista, veiculo, placa, km, kmFinal, finalidade, 
     });
 
     await firebase.database().ref("contViagens").set(id);
-
-  
     sessionStorage.id = id;
-   
+    alert("Viagem cadastrada com sucesso!")
+    window.location.replace('espera.html')
 }
 
 async function guardarContador(id) {
