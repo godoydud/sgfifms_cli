@@ -15,7 +15,7 @@ document.getElementById("form").addEventListener("submit", (e) => {
     }else{
         var dtSaida = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`   
     }
-        var hrSaida = `${d.getHours()}:0${d.getMinutes()}`;
+    var hrSaida = `${d.getHours()}:${d.getMinutes()}`;
     e.preventDefault();
 
     if(veiculo == "Insira Veículo..."){
