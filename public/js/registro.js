@@ -15,12 +15,7 @@ document.getElementById("form").addEventListener("submit", (e) => {
     }else{
         var dtSaida = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`   
     }
-    if(d.getMinutes() < 10 ){
         var hrSaida = `${d.getHours()}:0${d.getMinutes()}`;
-    }else{
-        var hrSaida = `${d.getHours()}:${d.getMinutes()}`;
-    }
-    
     e.preventDefault();
 
     if(veiculo == "Insira Veículo..."){

@@ -27,11 +27,7 @@ const preencheDados = () => {
         }else{
             document.getElementsByTagName('input')[6].value = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`
         }
-        if(d.getMinutes() <10){
-            document.getElementsByTagName('input')[7].value = `${d.getHours()}:0${d.getMinutes()}`;
-        }else{
-            document.getElementsByTagName('input')[7].value = `${d.getHours()}:${d.getMinutes()}`;
-        }
+        document.getElementsByTagName('input')[7].value = `${d.getHours()}:${d.getMinutes()}`;
         document.getElementsByTagName('input')[8].value = snapshot.val().km
         sessionStorage.kmAtual = snapshot.val().km
         console.log(sessionStorage.idVeiculo);
