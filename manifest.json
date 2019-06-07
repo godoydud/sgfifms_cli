@@ -3,12 +3,12 @@
   "lang" : "en",
   "name" : " ",
   "scope" : "/",
-  "display" : "standalone",
+  "display" : "minimal-ui",
   "start_url" : "https://sgfifms.herokuapp.com/",
   "short_name" : "SGF-IFMS",
-  "theme_color" : "transparent",
+  "theme_color" : "#2f9e41",
   "description" : "Controle do uso de frotas do IFMS Campus Nova Andradina",
-  "orientation" : "any",
+  "orientation" : "portrait",
   "background_color" : "#2f9e41",
   "icons": [
     {
