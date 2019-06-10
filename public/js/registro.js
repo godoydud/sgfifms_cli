@@ -10,10 +10,14 @@ document.getElementById("form").addEventListener("submit", (e) => {
     var km = document.getElementById("km").value;
     var kmFinal = document.getElementById("kmFinal").value;
     var finalidade = document.getElementById("finalidade").value;
-    if(d.getDate() < 10 || d.getMonth() <10){
-        var dtSaida = `0${d.getDate()}/0${d.getMonth() + 1}/${d.getFullYear()}`   
+    if(d.getDate() < 10){
+        var dtSaida = `0${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`   
     }else{
         var dtSaida = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`   
+    }
+    if(d.getMonth() < 10){
+        var dtSaida = `${d.getDate()}/0${d.getMonth() + 1}/${d.getFullYear()}`   
+
     }
     var hrSaida = `${d.getHours()}:${d.getMinutes()}`;
     e.preventDefault();

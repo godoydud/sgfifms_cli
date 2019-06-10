@@ -23,9 +23,13 @@ const preencheDados = () => {
         document.getElementsByTagName('input')[4].value = snapshot.val().dtSaida
         document.getElementsByTagName('input')[5].value = snapshot.val().hrSaida
         if(d.getDate() < 10){
-            document.getElementsByTagName('input')[6].value = `0${d.getDate()}/0${d.getMonth() + 1}/${d.getFullYear()}`
+            document.getElementsByTagName('input')[6].value = `0${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`
         }else{
             document.getElementsByTagName('input')[6].value = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`
+        }
+        if(d.getMonth() < 10){
+            document.getElementsByTagName('input')[6].value = `${d.getDate()}/0${d.getMonth() + 1}/${d.getFullYear()}`
+
         }
         document.getElementsByTagName('input')[7].value = `${d.getHours()}:${d.getMinutes()}`;
         document.getElementsByTagName('input')[8].value = snapshot.val().km
